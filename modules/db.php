@@ -153,6 +153,17 @@ class db {
                 }
                 break;
 
+            case "software":
+                switch ($options['lvl2']) {
+                    case "insert_software":
+                        $codigo = mysqli_real_escape_string($this->cn, $object->get('codigo'));
+                        $lenguaje = mysqli_real_escape_string($this->cn, $object->get('lenguaje'));
+                        $prediseno =mysqli_real_escape_string($this->cn, $object->get('prediseno'));
+                        $this->do_operation("INSERT INTO software (codigo, lenguaje, prediseno) VALUES ('$codigo', '$lenguaje', '$prediseno');");
+                        break;
+                }
+                break;
+
 
             default: break;
         }
@@ -222,7 +233,7 @@ class db {
                 switch ($option['lvl2']) {
                     case "all":
                         $info = $this->get_data("SELECT r.*, r.id as 'id de la reunion', i.nombre as 'Nombre_de_la_idea' ,r.fecha as Fecha,  i.nombre As 
-'Nombre_de_la_idea' FROM idea i, reunion r WHERE i.nombre=r.idea;");
+                     'Nombre_de_la_idea' FROM idea i, reunion r WHERE i.nombre=r.idea;");
                         break;
                     case "alll":
                         $info = $this->get_data("select * from reunion;");
@@ -242,6 +253,9 @@ class db {
                     case "all":
                         $code = mysqli_real_escape_string($this->cn, $data['Codigo']);
                         $info = $this->get_data("SELECT * FROM `prediseno` where `Codigo`='$code';");
+                        break;
+                    case "alll":
+                        $info = $this->get_data("select * from prediseno;");
                         break;
                 }
                 break;

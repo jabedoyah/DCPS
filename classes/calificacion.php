@@ -16,7 +16,7 @@ class calificacion extends object_standard
 	//data about the attributes
 	public function metadata()
 	{
-		return array("id" => array(), "puntaje" => array(), "idea" => array("foreign_name" => "c_i", "foreign" => "idea", "foreign_attribute" => "nombre"),"cliente" => array("foreign_name" => "c_c", "foreign" => "cliente", "foreign_attribute" => "identifacion"));
+		return array("id" => array(), "puntaje" => array(), "idea" => array("foreign_name" => "i_c", "foreign" => "idea", "foreign_attribute" => "nombre"),"cliente" => array("foreign_name" => "c_c", "foreign" => "cliente", "foreign_attribute" => "identifacion"));
 	}
 	
 	public function primary_key()

@@ -1,53 +1,60 @@
-﻿<?php
+<?php
 require('configs/include.php');
 require('modules/m_phpass/PasswordHash.php');
 
 class c_login extends super_controller {
 
-    protected $em;
 
     public function validarlogin() {
 
 
         $hasher = new PasswordHash(8, FALSE);
         $code['empleado']['cedula'] = $this->post->Usuario;
+        $code['cliente']['identificacion'] = $this->post->Contrasena;
+        $code['cliente']['nombre'] = $this->post->Usuario;
         $options['empleado']['lvl2'] = "validar";
+        $options['cliente']['lvl2'] = "validar";
         $this->orm->connect();
-        $this->orm->read_data(array("empleado"), $options, $code);
-        $this->em = $this->orm->get_objects("empleado");
-        $this->orm->close();
-
-       /* $codec['cliente']['nombre'] = $this->post->Usuario;
-        $codec['cliente']['identificacion'] = $this->post->Contrasena;
-        $optionss['cliente']['lvl2'] = "validar";
-        $this->orm->connect();
-        $this->orm->read_data(array("cliente"), $optionss, $codec);
-        $this->cl = $this->orm->get_objects("cliente");
-        $this->orm->close();
-
-        $_SESSION['idcliente'] = $this->post->Contrasena;*/
-
-        //echo $this->em->get('identificacion');
-
-        
-        if (isset($this->cl[0])) {
-            header('Location: analista.php');
-        } elseif (isset($this->em[0]) && $hasher->CheckPassword($this->post->Contrasena, $this->em[0]->get('contrasena')))  {
-            if ($this->em[0]->get('tipo1') == 'miembro') {
-                if ($this->em[0]->get('tipo2') == 'especialista en desarrollo del producto') {
+        $this->orm->read_data(array("empleado","cliente"), $options, $code);
+        $cliente = $this->orm->get_objects("cliente");
+        $empleado = $this->orm->get_objects("empleado");
+        $this->orm->close();        
+        if (isset($cliente[0])) {
+            $_SESSION['id']=$cliente[0]->get('identificacion');
+            $_SESSION['tipo1']="cliente";
+            $_SESSION['header']='Location: cliente.php';
+            $this->session = $_SESSION;
+            header('Location: cliente.php');
+        } elseif (isset($empleado[0]) && $hasher->CheckPassword($this->post->Contrasena, $empleado[0]->get('contrasena')))  {
+            $_SESSION['id']=$empleado[0]->get('cedula');
+            $_SESSION['tipo1']=$empleado[0]->get('tipo1');
+            if ($empleado[0]->get('tipo1') == 'miembro') {
+                $_SESSION['tipo2']=$empleado[0]->get('tipo2');
+                if ($empleado[0]->get('tipo2') == 'especialista en desarrollo del producto') {
+                    $_SESSION['header']='Location: opciones_especialista.php';
                     header('Location: opciones_especialista.php');
-                } elseif ($this->em[0]->get('tipo2') == 'analista de negocios') {
+                } elseif ($empleado[0]->get('tipo2') == 'analista de negocios') {
+                    $_SESSION['header']='Location: opciones_analista.php';
                     header('Location: opciones_analista.php');
-                } elseif ($this->em[0]->get('tipo2') == 'gerente de negocios') {
-                    header('Location: analista.php');
-                } elseif ($this->em[0]->get('tipo2') == ' gerente.tpl') {
-                    header('Location: analista.php');
-                } elseif ($this->em[0]->get('tipo2') == 'arquitecto de software') {
-                    header('Location: analista.php');
+                } elseif ($empleado[0]->get('tipo2') == 'gerente de negocios') {
+                    $_SESSION['header']='Location: opciones_gerente.php';
+                    header('Location: opciones_gerente.php');
+                } elseif ($empleado[0]->get('tipo2') == 'ingeniero de hardware') {
+                    $_SESSION['header']='Location: opciones_ingeniero.php';
+                    header('Location: opciones_ingeniero.php');
+                } elseif ($empleado[0]->get('tipo2') == 'arquitecto de software') {
+                    $_SESSION['header']='Location: opciones_arquitecto.php';
+                    header('Location: opciones_arquitecto.php');
                 }
+            }else{
+                $_SESSION['header']='Location: disenador.php';
+                header('Location: disenador.php');
             }
+            $this->session = $_SESSION;
         } else {
             if($this->post->Usuario == "" || $this->post->Contrasena == ""){
+                $this->engine->assign(alerta, "ms.alertify()");
+            }else{
                 $this->engine->assign(alerta, "ms.alertify()");
             }
         }

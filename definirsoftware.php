@@ -1,31 +1,38 @@
 <?php
 
-require('configs/include.php');
+require ('configs/include.php');
 
-class c_Registrar_prediseno extends super_controller {
+class c_definirsoftware extends super_controller {
 
-    public function Agregar_prediseno() {
-        if (is_empty($this->post->codigo)) {
-            $message1 = "Ingrese el codigo por favor. ";
+    public function add() {
+
+
+        if ($this->post->prediseno == "prediseno") {
+            $message1 = "Seleccione el codigo del prediseno por favor. ";
         }
         if (!is_empty($message1))
             throw_exception($message1);
-
-        if (!is_numeric($this->post->codigo)) {
-            $message2 = "El codigo del prediseño debe ser numerico";
+        if (is_empty($this->post->codigo)) {
+            $message2 = "Seleccione lel codigo del software por favor.";
         }
         if (!is_empty($message2))
             throw_exception($message2);
 
-        if (!$this->select_prediseno() == 0) {
-            $message3 = "Ya existe un prediseño con este codigo";
+        if ($this->post->lenguaje == "lenguaje") {
+            $message3 = "Seleccione el lenguaje de porgramacion por favor..";
+            // $this->engine->assign('fecha', $this->post->fecha);
         }
+
+
         if (!is_empty($message1) || !is_empty($message2) || !is_empty($message3))
             throw_exception($message1 . $message2 . $message3);
 
-        $pred = new prediseno($this->post);
+
+        $soft = new software($this->post);
+
+
         $this->orm->connect();
-        $this->orm->insert_data("insert", $pred);
+        $this->orm->insert_data("insert_software", $soft);
         $this->orm->close();
         $this->msg_warning = "Programacion de la reunion con Exito";
         $this->temp_aux = 'message.tpl';
@@ -34,24 +41,19 @@ class c_Registrar_prediseno extends super_controller {
         $this->engine->assign('msg_warning', $this->msg_warning);
     }
 
-    public function select_prediseno() {
-        $options['prediseno']['lvl2'] = "all";
-        $cod['prediseno']['Codigo'] = $this->post->codigo;
-        $this->orm->connect();
-        $this->orm->read_data(array("prediseno"), $options, $cod);
-        $predise = $this->orm->get_objects("prediseno");
-        $this->orm->close();
-
-        return count($predise);
-    }
-
     public function display() {
 
-        $this->engine->display($this->temp_aux);
-        $this->engine->display('Registrar_prediseno.tpl');
-        $this->engine->display('header.tpl');
 
-        $this->engine->display('footer.tpl');
+        $options['prediseno']['lvl2'] = "alll";
+        $this->orm->connect();
+        $this->orm->read_data(array("prediseno"), $options);
+        $prediseno = $this->orm->get_objects("prediseno");
+        $this->orm->close();
+
+        $this->engine->assign('prediseno', $prediseno);
+        $this->engine->assign('title', 'Definir Software');
+        $this->engine->display($this->temp_aux);
+        $this->engine->display('definirsoftware.tpl');
     }
 
     public function run() {
@@ -62,15 +64,15 @@ class c_Registrar_prediseno extends super_controller {
         } catch (Exception $e) {
             $this->error = 1;
             $this->msg_warning = $e->getMessage();
-            $this->temp_aux = 'message.tpl';
             $this->engine->assign('type_warning', $this->type_warning);
             $this->engine->assign('msg_warning', $this->msg_warning);
+            $this->temp_aux = 'message.tpl';
         }
         $this->display();
     }
 
 }
 
-$ob = new c_Registrar_prediseno();
-$ob->run();
+$call = new c_definirsoftware();
+$call->run();
 ?>
