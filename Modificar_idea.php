@@ -38,9 +38,12 @@ class c_Modificar_idea extends super_controller {
 
     public function display() {
 
+        $this->engine->display('header.tpl');
+        $this->engine->display('opciones_analista.tpl');
         $this->selectideas();
         $this->engine->display($this->temp_aux);
         $this->engine->display('Modificar_idea.tpl');
+        $this->engine->display('footer.tpl');
         //    $this->engine->display('header.tpl');
         //  $this->engine->display('footer.tpl');
     }

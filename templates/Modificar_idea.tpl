@@ -1,54 +1,33 @@
 
-<html>
-    <script lang="javascript" src="js/jquery-2.1.3.min.js"></script>
+<div class="col-md-4 col-md-offset-3 modificar_idea">
     <body>    
         <form action="{$gvar.l__global}Modificar_idea.php?option=Modificaridea" method="post">
 
-            Modificar idea:
-            <table>
-                <tbody>
-
-
-                    <tr>
-                        <td><select name="ddl" id="mySelect" onchange="myFunction()" >
-                                <option > Seleccione idea</option>
+            <p class="modificar_p letra"><b>Modificar idea:</b></p>
+            <select class="form-control" name="ddl" id="mySelect" onchange="myFunction()" >
+                                <option>Seleccione idea</option>
                                 {section loop=$ide name=i }
 
                                     <option value= {$ide[i]->get('nombre')}>  {$ide[i]->get('nombre')}</option>                 
                                 {/section}
 
-                            </select></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <a  class="des" id="desc"> Descripcion actual :</a> 
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>  
+                            </select>
+                            <div class="des" id="desc">
+                                <p class="letra"><b>Descripcion actual :</b></p>
                             {section loop=$ide name=i }
-                                <a  class="idea_descripcion" id="idea_descripcion_{$ide[i]->get('nombre')}" > {$ide[i]->get('descripcion')}</a>                 
+                                <a  class="idea_descripcion letra1" id="idea_descripcion_{$ide[i]->get('nombre')}" ><b> {$ide[i]->get('descripcion')}</b></a>              
                             {/section}
 
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="des1" id="desc1">
-                            <a >Nueva descripcion:</a> </br>
+                            <br/>
+                            <br/>
 
-                            <textarea id="textAread_id" name = "descripcion" rows = "8" cols = "40" class = "input" WRAP ></textarea> </br>
+                            <a class="letra"><b>Nueva descripcion:</b></a> </br>
+
+                            <textarea id="textAread_id" name = "descripcion" rows = "8" cols = "40" class = "form-control" WRAP ></textarea> </br>
                             <!-- <input type="button" onclick="val()" value="Modificar">   -->
-                            <input type="submit" value="Modificar" />
+                            <input class="btn-default" type="submit" value="Modificar" />
 
-
-                        </td>
-
-
-                    </tr>
-
-                </tbody>
-            </table>
-
+                            </div>
             <!--
                         <script>
                             function val()
@@ -86,4 +65,9 @@
             </script>
         </form>
     </body>
-</html>
+
+</div>
+<div class="col-md-3">
+
+</div>
+</div>

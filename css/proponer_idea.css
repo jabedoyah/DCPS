@@ -1,9 +1,15 @@
 .fondo{
-	height: 90%;
-	text-align: center;
-	background: #E0ECFF;
-	border-radius: 50px 0px 50px 0px;
-	-moz-border-radius: 50px 0px 50px 0px;
-	-webkit-border-radius: 50px 0px 50px 0px;
+    margin-top: 2%;
+    padding-top: 5%;
+    height: 90%;
+    text-align: center;
+    background: #eaf905;
+    border-radius: 50px 0px 50px 0px;
+    -moz-border-radius: 50px 0px 50px 0px;
+    -webkit-border-radius: 50px 0px 50px 0px;
 
+}
+
+.trans {
+    opacity: 0.8;
 }

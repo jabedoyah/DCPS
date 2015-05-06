@@ -1,36 +1,36 @@
-<?php /* Smarty version Smarty-3.0.9, created on 2015-05-05 23:17:37
+<?php /* Smarty version Smarty-3.0.9, created on 2015-05-06 04:19:14
          compiled from "C:/wamp/www/ProyectoDCPS1/templates\proponeridea.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:1423255483f2d0c5197-37523269%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:972655497a22455663-24639517%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'e4678955fb4b0320f6a2577644312c8478587e66' => 
     array (
       0 => 'C:/wamp/www/ProyectoDCPS1/templates\\proponeridea.tpl',
-      1 => 1430798124,
+      1 => 1430878751,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1423255483f2d0c5197-37523269',
+  'nocache_hash' => '972655497a22455663-24639517',
   'function' => 
   array (
   ),
   'has_nocache_code' => false,
 )); /*/%%SmartyHeaderCode%%*/?>
-<div class="square">
+<div class="col-md-4 col-md-offset-3 fondo tr">
 <form action="<?php echo $_smarty_tpl->getVariable('gvar')->value['l_global'];?>
 proponeridea.php?option=add" method="post">
   <p>
     <label for="textfield">Nombre de idea:</label>
-    <input type="text" name="nombre">
+    <input class="form-control" type="text" name="nombre">
   </p>
-  <p>Descripcion</p>
+  <p><b>Descripción</b></p>
   <p>
-    <textarea name="descripcion" cols="40" rows="10"></textarea>
+    <textarea class="form-control" name="descripcion" cols="40" rows="10"></textarea>
   </p>
   <p>
     <label for="select">Necesidad:</label>
-    <select name="necesidad">
+    <select  class="form-control" name="necesidad">
     <option > Seleccione necesidad</option>
     <?php unset($_smarty_tpl->tpl_vars['smarty']->value['section']['i']);
 $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['loop'] = is_array($_loop=$_smarty_tpl->getVariable('necesidad')->value) ? count($_loop) : max(0, (int)$_loop); unset($_loop);
@@ -63,9 +63,12 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['last']       = ($_smart
     </select>
   </p>
   <p>
-    <input type="submit" name="submit" value="Enviar">
-    <input type="reset" name="reset" value="Cancelar">
+    <input class="btn-default" type="submit" name="submit" value="Enviar">
+    <input class="btn-default" type="reset" name="reset" value="Cancelar">
   </p>
-  <p>&nbsp;</p>
 </form>
+</div>
+<div class="col-md-3">
+
+</div>
 </div>
