@@ -139,16 +139,15 @@ class db {
                 break;
 
 
-            case "reunion":
+          case "reunion":
                 switch ($options['lvl2']) {
                     case "insert_reunion":
                         $fecha = mysqli_real_escape_string($this->cn, $object->get('fecha'));
-                        $idea = $_SESSION["ididea"];
                         //echo $fecha;
                         //echo 'Esto es idea  ';
                         //echo $idea;
 
-                        $this->do_operation("INSERT INTO `dbdcpstodas`.`reunion`(`fecha`,`idea`)VALUES('$fecha','$idea');");
+                        $this->do_operation("INSERT INTO `reunion`(`fecha`,`idea`)VALUES('$fecha','$idea');");
                         break;
                 }
                 break;
@@ -182,14 +181,21 @@ class db {
                         break;
                 }
                 break;
-            case "idea":
+           case "idea":
                 switch ($options['lvl2']) {
                     case "normal":
 
                         $descripcion = mysqli_real_escape_string($this->cn, $object->get('descripcion'));
                         $nombre = $_SESSION['nombre'];
-                        $this->do_operation("UPDATE `dbdcpstodas`.`idea` SET `descripcion` = '$descripcion', `etapa` =2 WHERE `nombre` = '$nombre';");
+                        $this->do_operation("UPDATE `idea` SET `descripcion` = '$descripcion', `etapa` =2 WHERE `nombre` = '$nombre';");
                         break;
+                    case "reunion":
+                        escape_string($object);
+                        $nombre = $object->get('nombre');
+                        $reunion = $object->get('reunion');
+                        $this->do_operation("UPDATE `idea` SET reunion = '$reunion' WHERE `nombre` = '$nombre';");
+                        break;
+
                 }
                 break;
 
@@ -232,7 +238,7 @@ class db {
                 break;
 
 
-            case "reunion":
+           case "reunion":
                 switch ($option['lvl2']) {
                     case "all":
                         $info = $this->get_data("SELECT r.*, r.id as 'id de la reunion', i.nombre as 'Nombre_de_la_idea' ,r.fecha as Fecha,  i.nombre As 

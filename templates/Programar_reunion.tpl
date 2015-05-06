@@ -2,6 +2,10 @@
     <table>
         <tbody>
             <tr>
+                <td>Ingrese el código de la reunion: </td>
+                <td> <input name="codigo" type="text"></td>
+            </tr>
+            <tr>
                 <td>Seleccione fecha de la reunion: </td>
                 <td> <input name="fecha" type="date"></td>
             </tr>

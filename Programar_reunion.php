@@ -11,26 +11,32 @@ class c_Programar_reunion extends super_controller {
             $message1 = "Seleccione la fecha por favor. ";
             //   $this->engine->assign('ddl', $this->post->ddl);
         }
-        if (is_empty($this->post->ddl)) {
-            $message2 = "Seleccione la idea por favor.";
+        if (is_empty($this->post->codigo)) {
+            $message2 = "Ingrese el codigo por favor.";
             // $this->engine->assign('fecha', $this->post->fecha);
         }
-        if (!is_empty($message1) || !is_empty($message2))
-            throw_exception($message1 . $message2);
+        if (is_empty($this->post->ddl)) {
+            $message3 = "Seleccione la idea por favor.";
+            // $this->engine->assign('fecha', $this->post->fecha);
+        }
+        if (!is_empty($message1) || !is_empty($message2) || !is_empty($message3))
+            throw_exception($message1 . $message2 . $message3);
 
-        if (!is_empty($message1) || !is_empty($message2))
-            throw_exception($message1 . $message2);
         $reun = new reunion($this->post);
         $_SESSION["ididea"] = $this->post->ddl;
+        $idear = new idea();
+        $idear->set('nombre', $this->post->ddl);
+        $idear->set('reunion', $this->post->codigo);
 
 
 
         $this->orm->connect();
         $this->orm->insert_data("insert_reunion", $reun);
+        $this->orm->update_data("reunion", $idear);
         $this->orm->close();
         $this->msg_warning = "Programacion de la reunion con Exito";
         $this->temp_aux = 'message.tpl';
-        $this->type_warning = "Completo";
+        $this->type_warning = "success";
         $this->engine->assign('type_warning', $this->type_warning);
         $this->engine->assign('msg_warning', $this->msg_warning);
     }
@@ -64,12 +70,17 @@ class c_Programar_reunion extends super_controller {
 
     public function run() {
         try {
-            if (isset($this->get->option)) {
-                //if ($this->get->option == "conversion")
-                $this->{$this->get->option}();
-                //else {
-                //throw_exception("OpciÃ³n ". $this->get->option." no disponible");
-                //}
+            if(is_null($this->session)){header('Location: login.php');}
+            elseif($this->session['tipo2']=="gerente de negocios"){
+                if (isset($this->get->option)) {
+                    //if ($this->get->option == "conversion")
+                    $this->{$this->get->option}();
+                    //else {
+                    //throw_exception("OpciÃ³n ". $this->get->option." no disponible");
+                    //}
+                }
+            }else{
+                header($this->session['header']);
             }
         } catch (Exception $e) {
             $this->error = 1;

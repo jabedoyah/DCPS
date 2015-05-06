@@ -29,11 +29,11 @@
 
                     
                         <div class="des1" id="desc1">
-                            <a >Califique la idea:</a> </br>
+                            <a>Califique la idea:</a> </br>
 
                             1   <input type="radio" name="calificacion" value="1"> 2   <input type="radio" name="calificacion" value="2"> 3   <input type="radio" name="calificacion" value="3"> 4   <input type="radio" name="calificacion" value="4"> 5   <input type="radio" name="calificacion" value="5"></br>
                             <!-- <input type="button" onclick="val()" value="Calificar">   -->
-                            <input type="submit" value="Calificar" />
+                            <input class="btn-default" type="submit" value="Calificar" />
                         </div>
 
 

@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.0.9, created on 2015-05-06 01:28:10
+<?php /* Smarty version Smarty-3.0.9, created on 2015-05-06 07:59:56
          compiled from "C:/wamp/www/ProyectoDCPS1/templates\Programar_reunion.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:1255455483dd1acb522-09569906%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:185085549addca13a63-25562894%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'fdbe1957cc5afef6a9df68d85968c02211b607b1' => 
     array (
       0 => 'C:/wamp/www/ProyectoDCPS1/templates\\Programar_reunion.tpl',
-      1 => 1430797778,
+      1 => 1430891559,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1255455483dd1acb522-09569906',
+  'nocache_hash' => '185085549addca13a63-25562894',
   'function' => 
   array (
   ),
@@ -21,6 +21,10 @@ $_smarty_tpl->decodeProperties(array (
 Programar_reunion.php?option=Agregar_reuniones" method="post">
     <table>
         <tbody>
+            <tr>
+                <td>Ingrese el código de la reunion: </td>
+                <td> <input name="codigo" type="text"></td>
+            </tr>
             <tr>
                 <td>Seleccione fecha de la reunion: </td>
                 <td> <input name="fecha" type="date"></td>
