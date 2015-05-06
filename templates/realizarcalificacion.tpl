@@ -1,15 +1,9 @@
-
-<html>
+<div class="col-md-4 col-md-offset-3 fondo tr">
     <body>    
         <form action="{$gvar.l__global}realizarcalificacion.php?option=calificar" method="post">
 
             Realizar Calificacion:
-            <table>
-                <tbody>
-
-
-                    <tr>
-                        <td><select name="idea" id="mySelect" onchange="myFunction()" >
+                <select class="form-control" name="idea" id="mySelect" onchange="myFunction()" >
                                 <option > Seleccione idea</option>
                                 {section loop=$idea name=i }
 
@@ -17,52 +11,32 @@
                                                    
                                 {/section}
 
-                            </select></td>
-                    </tr>
-                    <tr>
-                        <td>
+                            </select>
+
                             <a  class="des" id="desc"> Descripcion:</a> 
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>  
+     
                             {section loop=$idea name=i }
                                 <a  class="idea_descripcion" id="idea_descripcion_{$idea[i]->get('nombre')}" > {$idea[i]->get('descripcion')}</a>                 
                             {/section}
 
-                        </td>
-                    </tr>
-                    <tr>
-                    <tr>
-                        <td>
+
                             <a  class="nec" id="nece"> Necesidad:</a> 
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>  
+  
                             {section loop=$idea name=i }
                                 <a  class="idea_necesidad" id="idea_necesidad_{$idea[i]->get('nombre')}" > {$idea[i]->get('necesidad')}</a>                 
                             {/section}
 
-                        </td>
-                    </tr>
-                    <tr>
+
                     
-                        <td class="des1" id="desc1">
+                        <div class="des1" id="desc1">
                             <a >Califique la idea:</a> </br>
 
                             1   <input type="radio" name="calificacion" value="1"> 2   <input type="radio" name="calificacion" value="2"> 3   <input type="radio" name="calificacion" value="3"> 4   <input type="radio" name="calificacion" value="4"> 5   <input type="radio" name="calificacion" value="5"></br>
                             <!-- <input type="button" onclick="val()" value="Calificar">   -->
                             <input type="submit" value="Calificar" />
+                        </div>
 
 
-                        </td>
-
-
-                    </tr>
-
-                </tbody>
-            </table>
 
             <!--
                         <script>
@@ -111,4 +85,10 @@
             </script>
         </form>
     </body>
-</html>
+</div>
+<div class="col-md-3">
+
+</div>
+</div>
+                            
+                           

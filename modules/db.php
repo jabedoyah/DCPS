@@ -244,10 +244,17 @@ class db {
                 }
                 break;
 
-            case "idea":
+           case "idea":
                 switch ($option['lvl2']) {
                     case "all":
                         $info = $this->get_data("select * from idea;");
+                        break;
+                    case "one":
+                        $nombre = mysqli_real_escape_string($this->cn, $data['nombre']);
+                        $info = $this->get_data("SELECT * FROM idea WHERE nombre='$nombre';");
+                        break;
+                    case "reunion":
+                        $info=$this->get_data("SELECT * FROM idea INNER JOIN reunion WHERE reunion.fecha=CURDATE() and reunion.codigo=idea.reunion;");
                         break;
                 }
                 break;

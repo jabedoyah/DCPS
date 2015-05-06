@@ -37,8 +37,11 @@ class c_realizar_calificacion extends super_controller {
 
     public function display() {
         $this->engine->assign('title', 'Realizar calificacion');
+        $this->engine->display('header.tpl');
+        $this->engine->display('opciones_analista.tpl');
         $this->engine->display($this->temp_aux);
         $this->engine->display('realizarcalificacion.tpl');
+        $this->engine->display('footer.tpl');
     }
 
     public function run() {

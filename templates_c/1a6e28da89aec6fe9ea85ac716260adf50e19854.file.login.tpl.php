@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.0.9, created on 2015-05-05 23:53:15
+<?php /* Smarty version Smarty-3.0.9, created on 2015-05-06 07:29:37
          compiled from "C:/wamp/www/ProyectoDCPS1/templates\login.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:3105555493bcb24ea97-68082233%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:120585549a6c19fff54-05785862%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '1a6e28da89aec6fe9ea85ac716260adf50e19854' => 
     array (
       0 => 'C:/wamp/www/ProyectoDCPS1/templates\\login.tpl',
-      1 => 1430862745,
+      1 => 1430890164,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '3105555493bcb24ea97-68082233',
+  'nocache_hash' => '120585549a6c19fff54-05785862',
   'function' => 
   array (
   ),
@@ -27,6 +27,7 @@ login.php?option=validarlogin" method="post">
     <link rel="stylesheet" href="css/login.css">
     <link rel="stylesheet" type="text/css" href="js/alertify/themes/alertify.default.css">
     <link rel="stylesheet" type="text/css" href="js/alertify/themes/alertify.core.css">
+    <META HTTP-EQUIV="Content-Type" content="text/html; charset=utf-8"/>
     <body <?php if (isset($_smarty_tpl->getVariable('alerta',null,true,false)->value)){?> onload="<?php echo $_smarty_tpl->getVariable('alerta')->value;?>
 "<?php }?>>
         <div class="container">

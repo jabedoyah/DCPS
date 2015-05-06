@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/login.css">
     <link rel="stylesheet" type="text/css" href="js/alertify/themes/alertify.default.css">
     <link rel="stylesheet" type="text/css" href="js/alertify/themes/alertify.core.css">
+    <META HTTP-EQUIV="Content-Type" content="text/html; charset=utf-8"/>
     <body {if isset($alerta)} onload="{$alerta}"{/if}>
         <div class="container">
             <div class="row">
