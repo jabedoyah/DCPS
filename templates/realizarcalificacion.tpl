@@ -15,7 +15,7 @@
                                 {section loop=$idea name=i }
 
                                     <option value="{$idea[i]->get('nombre')}">{$idea[i]->get('nombre')}</option> 
-                                                   
+
                                 {/section}
 
                             </select></td>
@@ -48,7 +48,7 @@
                         </td>
                     </tr>
                     <tr>
-                    
+
                         <td class="des1" id="desc1">
                             <a >Califique la idea:</a> </br>
 
@@ -89,7 +89,7 @@
 
                     $('.des').hide();
                     $('#desc').show();
-                    
+
                     $('.idea_necesidad').hide();
                     $('#idea_necesidad_' + x).show();
 
@@ -98,14 +98,14 @@
 
                     $('.des1').hide();
                     $('#desc1').show();
-                    
-                    
+
+
 
                 }
                 $(document).ready(function () {
                     $('.idea_descripcion').hide();
                     $('.des').hide();
-                     $('.idea_necesidad').hide();
+                    $('.idea_necesidad').hide();
                     $('.nec').hide();
                     $('.des1').hide();
                 });

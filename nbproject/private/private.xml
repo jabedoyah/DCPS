@@ -3,12 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/wamp/www/ProyectoDCPS/analista.php</file>
-            <file>file:/C:/wamp/www/ProyectoDCPS/css/opciones_analista.css</file>
-            <file>file:/C:/wamp/www/ProyectoDCPS/templates/login.tpl</file>
-            <file>file:/C:/wamp/www/ProyectoDCPS/opciones_analista.php</file>
-            <file>file:/C:/wamp/www/ProyectoDCPS/login.php</file>
-            <file>file:/C:/wamp/www/ProyectoDCPS/templates/proponer_idea.tpl</file>
+            <file>file:/C:/wamp/www/ProyectoDCPS/templates/opciones_especialista.tpl</file>
+            <file>file:/C:/wamp/www/ProyectoDCPS/opciones_arquitecto.php</file>
+            <file>file:/C:/wamp/www/ProyectoDCPS/modules/db.php</file>
+            <file>file:/C:/wamp/www/ProyectoDCPS/Programar_reunion.php</file>
+            <file>file:/C:/wamp/www/ProyectoDCPS/templates/opciones_arquitecto.tpl</file>
+            <file>file:/C:/wamp/www/ProyectoDCPS/definir_dispositivo.php</file>
         </group>
     </open-files>
 </project-private>

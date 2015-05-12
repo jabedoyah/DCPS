@@ -148,7 +148,10 @@ class db {
                         $descripcion = mysqli_real_escape_string($this->cn, $object->get('descripcion'));
                         $etapa = "Por revisar";
                         $necesidad = mysqli_real_escape_string($this->cn, $object->get('necesidad'));
-                        $this->do_operation("INSERT INTO idea (nombre, descripcion, etapa, necesidad) VALUES ('$nombre', '$descripcion', '$etapa', '$necesidad');");
+                        $miem=  $_SESSION['miembro'];
+                        $clie= $_SESSION['identi'];
+                      
+     $this->do_operation("INSERT INTO `dbdcps`.`idea`(`nombre`,`descripcion`,`etapa`,`cliente`,`miembro`,`necesidad`)VALUES('$nombre', '$descripcion', '$etapa',$clie,$miem, '$necesidad');");
                         break;
                 }
                 break;

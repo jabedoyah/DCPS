@@ -1,3 +1,5 @@
+<!--Para usar la ñ-->
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <form action="{$gvar.l__global}login.php?option=validarlogin" method="post">
 <script src="js/jquery-1.11.2.min.js"></script>
 <script src="js/alertify/lib/alertify.min.js"></script>
@@ -48,7 +50,7 @@
 					</div>
 					<div class="row row_login_center">
 						<input type="text" class="form-control" name="Usuario" placeholder="Usuario"/>
-						<input type="password" class="form-control" name="Contrasena" placeholder="ContraseÃ±a"/>
+						<input type="password" class="form-control" name="Contrasena" placeholder="Contraseña"/>
 					</div>
 					<div class="row row_login">
 						<button class="btn btn-orange">Ingresar</button>

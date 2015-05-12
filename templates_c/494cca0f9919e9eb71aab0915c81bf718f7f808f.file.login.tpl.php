@@ -1,22 +1,24 @@
-<?php /* Smarty version Smarty-3.0.9, created on 2015-05-06 04:25:54
+<?php /* Smarty version Smarty-3.0.9, created on 2015-05-12 18:55:08
          compiled from "C:/wamp/www/ProyectoDCPS/templates\login.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:1508055425c1965c161-53560316%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:51105552306c060ee1-10820559%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '494cca0f9919e9eb71aab0915c81bf718f7f808f' => 
     array (
       0 => 'C:/wamp/www/ProyectoDCPS/templates\\login.tpl',
-      1 => 1430851688,
+      1 => 1431449700,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1508055425c1965c161-53560316',
+  'nocache_hash' => '51105552306c060ee1-10820559',
   'function' => 
   array (
   ),
   'has_nocache_code' => false,
 )); /*/%%SmartyHeaderCode%%*/?>
+<!--Para usar la ñ-->
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <form action="<?php echo $_smarty_tpl->getVariable('gvar')->value['l__global'];?>
 login.php?option=validarlogin" method="post">
 <script src="js/jquery-1.11.2.min.js"></script>
@@ -69,7 +71,7 @@ login.php?option=validarlogin" method="post">
 					</div>
 					<div class="row row_login_center">
 						<input type="text" class="form-control" name="Usuario" placeholder="Usuario"/>
-						<input type="password" class="form-control" name="Contrasena" placeholder="ContraseÃ±a"/>
+						<input type="password" class="form-control" name="Contrasena" placeholder="Contraseña"/>
 					</div>
 					<div class="row row_login">
 						<button class="btn btn-orange">Ingresar</button>
