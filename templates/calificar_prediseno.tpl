@@ -1,3 +1,5 @@
+<!--Para usar la ñ-->
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <html>
     <script lang="javascript" src="js/jquery-2.1.3.min.js"></script>
     <body>    
@@ -5,7 +7,7 @@
 
             <table>
                 <tbody>
-                    <b>CÃ³digo del prediseÃ±o: </b>
+                    <b>Código del prediseño: </b>
                         <select name="codigo" id="mySelect" onchange="myFunction()">
                                 <option > seleccione codigo</option>
                                 {section loop=$viabilidad name=i }
@@ -30,7 +32,25 @@
                                 <a  class="res_causa" id="res_causa_{$viabilidad[i]->get('prediseno')}" > {$viabilidad[i]->get('causa')}</a>                 
                             {/section}
                             <br /><br />
-                             <a >Mas Detalle</a> <br /><br />
+                            <input type="button" value="Mas detalle:" onclick="detalles()"><br />
+                            <dt class="det" id="detc">
+                                {section loop=$viabilidad2 name=i }
+                                    <a  class="res_sof" id="res_sof_{$viabilidad2[i]->get('prediseno')}" > codigo de software: {$software[i]->get('codigo')}</a>
+                                {/section}<br />
+                                {section loop=$viabilidad2 name=i }
+                                    <a  class="res_len" id="res_len_{$viabilidad2[i]->get('prediseno')}" > lenguaje del software: {$software[i]->get('lenguaje')}</a>
+                                {/section}<br />
+                                {section loop=$viabilidad3 name=i }
+                                    <a  class="res_disp" id="res_disp_{$viabilidad3[i]->get('prediseno')}" > codigo del dispositivo: {$dispositivo[i]->get('codigo')}</a>
+                                {/section}<br />
+                                {section loop=$viabilidad3 name=i }
+                                    <a  class="res_cosd" id="res_cosd_{$viabilidad3[i]->get('prediseno')}" > costo del dispositivo: {$dispositivo[i]->get('costo')}</a>
+                                {/section}<br />
+                                {section loop=$viabilidad3 name=i }
+                                    <a  class="res_fund" id="res_fund_{$viabilidad3[i]->get('prediseno')}" > funcion del dispositivo: {$dispositivo[i]->get('funcion')}</a>
+                                {/section}
+                            </dt>
+                            <br /><br />
                             <input type="submit" value="Aceptado" name="resultado" /><br /><br />
                             <input type="submit" value="Rechazado" name="resultado" />
 
@@ -55,12 +75,33 @@
                     
                     $('.des1').hide();
                     $('#desc1').show();
-
+                }
+                function detalles() {
+                    var x = $("#mySelect").val();
+                    
+                    $('.det').hide();
+                    $('#detc').show();
+                    
+                    $('.res_sof').hide();
+                    $('#res_sof_' + x).show();
+                    
+                    $('.res_len').hide();
+                    $('#res_len_' + x).show();
+                    
+                    $('.res_disp').hide();
+                    $('#res_disp_' + x).show();
+                    
+                    $('.res_cosd').hide();
+                    $('#res_cosd_' + x).show();
+                    
+                    $('.res_fund').hide();
+                    $('#res_fund_' + x).show();
                 }
                 $(document).ready(function () {
                     $('.res_viabilidad').hide();
                     $('.des').hide();
                     $('.des1').hide();
+                    $('.det').hide();
                 });
             </script>
         </form>

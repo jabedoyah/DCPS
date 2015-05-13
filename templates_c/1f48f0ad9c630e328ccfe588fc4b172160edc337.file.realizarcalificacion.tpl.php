@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.0.9, created on 2015-05-08 08:33:31
+<?php /* Smarty version Smarty-3.0.9, created on 2015-05-12 23:48:19
          compiled from "C:/wamp/www/ProyectoDCPS/templates\realizarcalificacion.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:20190554c58bbd33513-88079021%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:2586755527523c483d9-35867549%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '1f48f0ad9c630e328ccfe588fc4b172160edc337' => 
     array (
       0 => 'C:/wamp/www/ProyectoDCPS/templates\\realizarcalificacion.tpl',
-      1 => 1431066808,
+      1 => 1431450541,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '20190554c58bbd33513-88079021',
+  'nocache_hash' => '2586755527523c483d9-35867549',
   'function' => 
   array (
   ),
@@ -60,7 +60,7 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['last']       = ($_smart
                                     <option value="<?php echo $_smarty_tpl->getVariable('idea')->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]->get('nombre');?>
 "><?php echo $_smarty_tpl->getVariable('idea')->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]->get('nombre');?>
 </option> 
-                                                   
+
                                 <?php endfor; endif; ?>
 
                             </select></td>
@@ -143,7 +143,7 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['last']       = ($_smart
                         </td>
                     </tr>
                     <tr>
-                    
+
                         <td class="des1" id="desc1">
                             <a >Califique la idea:</a> </br>
 
@@ -184,7 +184,7 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['last']       = ($_smart
 
                     $('.des').hide();
                     $('#desc').show();
-                    
+
                     $('.idea_necesidad').hide();
                     $('#idea_necesidad_' + x).show();
 
@@ -193,14 +193,14 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['last']       = ($_smart
 
                     $('.des1').hide();
                     $('#desc1').show();
-                    
-                    
+
+
 
                 }
                 $(document).ready(function () {
                     $('.idea_descripcion').hide();
                     $('.des').hide();
-                     $('.idea_necesidad').hide();
+                    $('.idea_necesidad').hide();
                     $('.nec').hide();
                     $('.des1').hide();
                 });
