@@ -1,4 +1,5 @@
-
+<!--Para usar la ñ-->
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <html>
     <script lang="javascript" src="js/jquery-2.1.3.min.js"></script>
     <body>    
@@ -28,7 +29,7 @@
                     <tr>
                         <td>  
                             {section loop=$idea name=i }
-                                <a  class="idea_descripcion" id="idea_descripcion_{$idea[i]->get('nombre')}" > {$idea[i]->get('descripcion')}</a>                 
+                                <a  class="idea_descripcion" id="idea_descripcion_{$idea[i]->get('nombre')}"> {$idea[i]->get('descripcion')}</a>                 
                             {/section}
 
                         </td>
@@ -65,23 +66,7 @@
                 </tbody>
             </table>
 
-            <!--
-                        <script>
-                            function val()
-                            {
-                                if (document.getElementById("textAread_id").value == null || document.getElementById("textAread_id").value == "")
-                                    alert("El campo: 'Nueva descripcion esta vacio'.")
-                                else
-                                        act Modificar_idea.php?option = pr
-                            }
-                        </script>
-            
-            -->
-
-
-
-
-            <script>
+             <script>
                 function myFunction() {
                     var x = $("#mySelect").val();
                     $('.idea_descripcion').hide();

@@ -32,7 +32,7 @@
                 <a > Descripcion actual :</a>  </br>             
 
                 {section loop=$ide name=i }
-                    <a  class="idea_descripcion" id="idea_descripcion_{$ide[i]->get('nombre')}" > {$ide[i]->get('descripcion')}</a>                           
+                    <a  class="idea_descripcion" id="idea_descripcion_{$ide[i]->get('nombre')}">{$ide[i]->get("descripcion")}</a>                           
                 {/section}</br>  
                 <a>Nueva descripcion:</br>
 
@@ -45,7 +45,7 @@
                     var x = $("#mySelect").val();
                     var a = $("#Myid").val();
                     $('#idprueba').show();
-                    $('#id_select'+a).show();
+                    $('#id_select' + a).show();
 
                     $('#id_descripcion').show();
                     $('#idea_descripcion_' + x).show();

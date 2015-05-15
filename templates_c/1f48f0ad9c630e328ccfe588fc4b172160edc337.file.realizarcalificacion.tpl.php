@@ -1,23 +1,24 @@
-<?php /* Smarty version Smarty-3.0.9, created on 2015-05-12 23:48:19
+<?php /* Smarty version Smarty-3.0.9, created on 2015-05-15 07:52:15
          compiled from "C:/wamp/www/ProyectoDCPS/templates\realizarcalificacion.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:2586755527523c483d9-35867549%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:270705555898f703f40-05699895%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '1f48f0ad9c630e328ccfe588fc4b172160edc337' => 
     array (
       0 => 'C:/wamp/www/ProyectoDCPS/templates\\realizarcalificacion.tpl',
-      1 => 1431450541,
+      1 => 1431668742,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '2586755527523c483d9-35867549',
+  'nocache_hash' => '270705555898f703f40-05699895',
   'function' => 
   array (
   ),
   'has_nocache_code' => false,
 )); /*/%%SmartyHeaderCode%%*/?>
-
+<!--Para usar la ñ-->
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <html>
     <script lang="javascript" src="js/jquery-2.1.3.min.js"></script>
     <body>    
@@ -97,7 +98,7 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['first']      = ($_smart
 $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['last']       = ($_smarty_tpl->tpl_vars['smarty']->value['section']['i']['iteration'] == $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['total']);
 ?>
                                 <a  class="idea_descripcion" id="idea_descripcion_<?php echo $_smarty_tpl->getVariable('idea')->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]->get('nombre');?>
-" > <?php echo $_smarty_tpl->getVariable('idea')->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]->get('descripcion');?>
+"> <?php echo $_smarty_tpl->getVariable('idea')->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]->get('descripcion');?>
 </a>                 
                             <?php endfor; endif; ?>
 
@@ -160,23 +161,7 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['last']       = ($_smart
                 </tbody>
             </table>
 
-            <!--
-                        <script>
-                            function val()
-                            {
-                                if (document.getElementById("textAread_id").value == null || document.getElementById("textAread_id").value == "")
-                                    alert("El campo: 'Nueva descripcion esta vacio'.")
-                                else
-                                        act Modificar_idea.php?option = pr
-                            }
-                        </script>
-            
-            -->
-
-
-
-
-            <script>
+             <script>
                 function myFunction() {
                     var x = $("#mySelect").val();
                     $('.idea_descripcion').hide();
