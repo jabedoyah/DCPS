@@ -40,6 +40,7 @@ class c_Programar_reunion extends super_controller {
     }
 
     public function selectideas() {
+        
         $options['idea']['lvl2'] = 'Por revisar';
         $this->orm->connect();
         $this->orm->read_data(array("idea"), $options);
