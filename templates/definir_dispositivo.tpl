@@ -27,7 +27,7 @@
                 <tr>
                     <td></td>
                     <td>
-                        <select name="prediseno">
+                        <select name="prediseno" id="mySelect" onchange="myFunction()" >
                             <option>Seleccione el prediseño </option>
                             {section loop=$predis name=i }
 
@@ -36,18 +36,15 @@
                         </select>
                     </td>
                 </tr>
-                <tr>
-                    <td></td>
+                <tr  class="cideaprediseno" id="idideaprediseno">
+                    <td><b>Idea del dispositivo:</b></td>
+                    <td>
 
-                    <td class="cideaprediseno" id="idideaprediseno">
-                        <select name="prediseno">
-                            <option>Seleccione el prediseño </option>
-                            {section loop=$predis name=i }
+                        {section loop=$predis name=i }
+                            <a class="cidea" id="ididea_{$predis[i]->get('codigo')}"> {$predis[i]->get('idea')}</a>
+                        {/section}
 
-                                <option value= {$predis[i]->get(codigo)}>{$predis[i]->get('codigo')}</option>                 
-                            {/section}
-                        </select> 
-                        
+
                     </td>
                 </tr>
                 <tr><td></td>
@@ -58,13 +55,13 @@
 
         <script>
             function myFunction() {
-                //var x = $("#mySelect").val();
+                var x = $("#mySelect").val();
                 $('#idideaprediseno').show();
-
-
+                $('#ididea_' + x).show();
             }
             $(document).ready(function () {
                 $('.cideaprediseno').hide();
+                $('.cidea').hide();
 
             });
         </script>

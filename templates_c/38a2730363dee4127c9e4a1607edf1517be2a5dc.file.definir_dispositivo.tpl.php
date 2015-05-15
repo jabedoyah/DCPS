@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.0.9, created on 2015-05-15 23:27:21
+<?php /* Smarty version Smarty-3.0.9, created on 2015-05-16 00:19:17
          compiled from "C:/wamp/www/ProyectoDCPS/templates\definir_dispositivo.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:16087555664b9b3aa05-68028335%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:21485555670e573f517-67491949%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '38a2730363dee4127c9e4a1607edf1517be2a5dc' => 
     array (
       0 => 'C:/wamp/www/ProyectoDCPS/templates\\definir_dispositivo.tpl',
-      1 => 1431725240,
+      1 => 1431728355,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '16087555664b9b3aa05-68028335',
+  'nocache_hash' => '21485555670e573f517-67491949',
   'function' => 
   array (
   ),
@@ -47,7 +47,7 @@ definir_dispositivo.php?option=add" method="post">
                 <tr>
                     <td></td>
                     <td>
-                        <select name="prediseno">
+                        <select name="prediseno" id="mySelect" onchange="myFunction()" >
                             <option>Seleccione el prediseño </option>
                             <?php unset($_smarty_tpl->tpl_vars['smarty']->value['section']['i']);
 $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['loop'] = is_array($_loop=$_smarty_tpl->getVariable('predis')->value) ? count($_loop) : max(0, (int)$_loop); unset($_loop);
@@ -81,13 +81,11 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['last']       = ($_smart
                         </select>
                     </td>
                 </tr>
-                <tr>
-                    <td></td>
+                <tr  class="cideaprediseno" id="idideaprediseno">
+                    <td><b>Idea del dispositivo:</b></td>
+                    <td>
 
-                    <td class="cideaprediseno" id="idideaprediseno">
-                        <select name="prediseno">
-                            <option>Seleccione el prediseño </option>
-                            <?php unset($_smarty_tpl->tpl_vars['smarty']->value['section']['i']);
+                        <?php unset($_smarty_tpl->tpl_vars['smarty']->value['section']['i']);
 $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['loop'] = is_array($_loop=$_smarty_tpl->getVariable('predis')->value) ? count($_loop) : max(0, (int)$_loop); unset($_loop);
 $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['name'] = 'i';
 $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['show'] = true;
@@ -111,13 +109,12 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['index_next'] = $_smarty
 $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['first']      = ($_smarty_tpl->tpl_vars['smarty']->value['section']['i']['iteration'] == 1);
 $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['last']       = ($_smarty_tpl->tpl_vars['smarty']->value['section']['i']['iteration'] == $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['total']);
 ?>
+                            <a class="cidea" id="ididea_<?php echo $_smarty_tpl->getVariable('predis')->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]->get('codigo');?>
+"> <?php echo $_smarty_tpl->getVariable('predis')->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]->get('idea');?>
+</a>
+                        <?php endfor; endif; ?>
 
-                                <option value= <?php echo $_smarty_tpl->getVariable('predis')->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]->get('codigo');?>
-><?php echo $_smarty_tpl->getVariable('predis')->value[$_smarty_tpl->getVariable('smarty')->value['section']['i']['index']]->get('codigo');?>
-</option>                 
-                            <?php endfor; endif; ?>
-                        </select> 
-                        
+
                     </td>
                 </tr>
                 <tr><td></td>
@@ -128,13 +125,13 @@ $_smarty_tpl->tpl_vars['smarty']->value['section']['i']['last']       = ($_smart
 
         <script>
             function myFunction() {
-                //var x = $("#mySelect").val();
+                var x = $("#mySelect").val();
                 $('#idideaprediseno').show();
-
-
+                $('#ididea_' + x).show();
             }
             $(document).ready(function () {
                 $('.cideaprediseno').hide();
+                $('.cidea').hide();
 
             });
         </script>

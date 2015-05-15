@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.0.9, created on 2015-05-15 02:20:51
+<?php /* Smarty version Smarty-3.0.9, created on 2015-05-16 00:09:00
          compiled from "C:/wamp/www/ProyectoDCPS/templates\opciones_especialista.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:2080055553be3b595d5-52155271%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:3065555566e7c10b8f5-37739515%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '488c97cdfab68b19386f1e0ba0166bf96ad57a8e' => 
     array (
       0 => 'C:/wamp/www/ProyectoDCPS/templates\\opciones_especialista.tpl',
-      1 => 1431649214,
+      1 => 1431725639,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '2080055553be3b595d5-52155271',
+  'nocache_hash' => '3065555566e7c10b8f5-37739515',
   'function' => 
   array (
   ),
@@ -23,7 +23,7 @@ $_smarty_tpl->decodeProperties(array (
         <br/><a href="proponeridea.php"><div class="item">Proponer Idea</div></a><br/>
         <br/>  <a href="realizarcalificacion.php"><div class="item">Realizar Calificación</div></a><br/>
         <br/><a href="Modificar_idea.php"><div class="item">Modificar Idea</div></a><br/>
-        <br/><a href="Definir_dispositivo.php"><div class="item">Definir dispositivo</div></a><br/>
+        <br/><a href="definir_dispositivo.php"><div class="item">Definir dispositivo</div></a><br/>
         <br/><a href="Revisar_diseno.php"><div class="item">Revisar diseño</div></a><br/>
         <br/><a href="Registrar_prediseno.php"><div class="item">Registrar prediseño</div></a><br/>
     </div>
