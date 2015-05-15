@@ -49,22 +49,6 @@
                 </tbody>
             </table>
 
-            <!--
-                        <script>
-                            function val()
-                            {
-                                if (document.getElementById("textAread_id").value == null || document.getElementById("textAread_id").value == "")
-                                    alert("El campo: 'Nueva descripcion esta vacio'.")
-                                else
-                                        act Modificar_idea.php?option = pr
-                            }
-                        </script>
-            
-            -->
-
-
-
-
             <script>
                 function myFunction() {
                     var x = $("#mySelect").val();
