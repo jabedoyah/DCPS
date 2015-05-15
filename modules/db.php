@@ -148,10 +148,7 @@ class db {
                         $descripcion = mysqli_real_escape_string($this->cn, $object->get('descripcion'));
                         $etapa = "Por revisar";
                         $necesidad = mysqli_real_escape_string($this->cn, $object->get('necesidad'));
-                        $miem=  $_SESSION['miembro'];
-                        $clie= $_SESSION['identi'];
-                      
-     $this->do_operation("INSERT INTO `dbdcps`.`idea`(`nombre`,`descripcion`,`etapa`,`cliente`,`miembro`,`necesidad`)VALUES('$nombre', '$descripcion', '$etapa',$clie,$miem, '$necesidad');");
+                        $this->do_operation("INSERT INTO idea (nombre, descripcion, etapa, necesidad) VALUES ('$nombre', '$descripcion', '$etapa', '$necesidad');");
                         break;
                 }
                 break;
@@ -202,7 +199,8 @@ class db {
                         $this->escape_string($object);
                         $descripcion = $object->get('descripcion');
                         $miembro = $object->get('miembro');
-                        $this->do_operation("UPDATE idea SET descripcion = '$descripcion', etapa = 'Modificada', miembro='$miembro' WHERE nombre = '$nombre';");
+                        $etapa = $object->get('etapa');
+                        $this->do_operation("UPDATE idea SET descripcion = '$descripcion', etapa = '$etapa', miembro='$miembro' WHERE nombre = '$nombre';");
                         break;
                     case "reunion":
                         $this->escape_string($object);
@@ -210,6 +208,7 @@ class db {
                         $reunion = $object->get('reunion');
                         $this->do_operation("UPDATE idea SET reunion = '$reunion' WHERE nombre = '$nombre';");
                         break;
+
 
                 }
                 break;
@@ -301,18 +300,16 @@ class db {
                         break;
                     case "one":
                         $nombre = mysqli_real_escape_string($this->cn, $data['nombre']);
-                        print_r2($nombre);
                         $info = $this->get_data("SELECT * FROM idea WHERE nombre = '$nombre';");
                         break;
-                    case "A revisar":
+                    case "Por revisar":
                         $info=$this->get_data("SELECT i.* FROM idea i WHERE i.etapa = 'Por revisar' OR i.etapa = 'Modificada';");
                         break;
                     case "reunion":
                         $info=$this->get_data("SELECT i.* FROM idea i, reunion r WHERE r.fecha=CURDATE() and i.reunion=r.codigo;");
                         break;
                     case "modificables":
-                        $info=$this->get_data("SELECT i.* FROM idea i, prediseno p, viabilidad v
-                                             WHERE i.nombre = p.idea AND p.resultado = 'Rechazado' AND p.codigo = v.prediseno AND v.resultado = 'Modificable';");
+                        $info=$this->get_data("SELECT i.* FROM idea i WHERE i.etapa = 'Modificable';");
                         break;
                 }
                 break;
@@ -388,6 +385,17 @@ class db {
                 switch ($option['lvl2']) {
                     case "all" :
                         $info = $this->get_data("SELECT * FROM diseno;");
+                        break;
+                }
+                break;
+
+            case "calificacion":
+                switch ($option['lvl2']) {
+                    case "all" :
+                        $info = $this->get_data("SELECT * FROM calificacion;");
+                        break;
+                    case "prom":
+                        $info = $this->get_data("SELECT id, idea, miembro, AVG(valor) AS valor FROM calificacion GROUP BY idea;");
                         break;
                 }
                 break;
