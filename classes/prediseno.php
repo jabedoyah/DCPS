@@ -7,6 +7,7 @@
         protected $gerente;
         protected $idea;
 
+        
 
         //components
         var $components = array();
