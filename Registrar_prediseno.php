@@ -45,6 +45,27 @@ class c_Registrar_prediseno extends super_controller {
 
         return count($predise);
     }
+    public function actualizar_ideas(){
+        $options['calificacion']['lvl2']="prom";
+        $this->orm->connect();
+        $this->orm->read_data(array("calificacion"), $options);
+        $califica = $this->orm->get_objects("calificacion");
+        print_r2($califica);
+        foreach ($califica as $key => $cal) {
+            if($cal->get('valor') < 3){
+                $result = 'No aceptada';
+            }else{
+                $result = 'Aceptada';
+            }
+            $cod['idea']['nombre'] = $cal->get('idea');
+            $options['idea']['lvl2']= "one";
+            $this->orm->read_data(array("idea"), $options, $cod);
+            $ii = $this->orm->get_objects("idea");
+            $ii->set('etapa',$result);
+            $this->orm->update_data("normal",$ii);
+        }
+
+    }
 
     public function display() {
     
@@ -57,6 +78,7 @@ class c_Registrar_prediseno extends super_controller {
             if (isset($this->get->option)) {
                 $this->{$this->get->option}();
             }
+            $this->actualizar_ideas();
             $options['idea']['lvl2'] = "all";
             $this->orm->connect();
             $this->orm->read_data(array("idea"), $options, $cod);
@@ -73,6 +95,6 @@ class c_Registrar_prediseno extends super_controller {
     }
 
 }
-$ob = new c_Registrar_prediseno();
-$ob->run();
+$call = new c_Registrar_prediseno();
+$call->run();
 ?>

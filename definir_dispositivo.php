@@ -36,7 +36,7 @@ class c_definir_dispositivo extends super_controller{
             if(!isset($this->session['id'])){
                 header('Location: login.php');
             }else{
-                if($this->session['tipo2']=="ingeniero de hardware"){
+                if($this->session['tipo2']=="especialista en desarrollo del producto"){
                     if (isset($this->get->option)){$this->{$this->get->option}();}
                 }else{
                     header($this->session['header']);
