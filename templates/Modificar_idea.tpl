@@ -7,8 +7,6 @@
             Modificar idea:
             <table>
                 <tbody>
-
-
                     <tr>
                         <td><select name="ddl" id="mySelect" onchange="myFunction()" >
                                 <option > Seleccione idea</option>

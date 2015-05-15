@@ -3,8 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/wamp/www/ProyectoDCPS/Modificar_idea1.php</file>
             <file>file:/C:/wamp/www/ProyectoDCPS/templates/Modificar_idea1.tpl</file>
+            <file>file:/C:/wamp/www/ProyectoDCPS/classes/prediseno.php</file>
+            <file>file:/C:/wamp/www/ProyectoDCPS/modules/db.php</file>
+            <file>file:/C:/wamp/www/ProyectoDCPS/classes/idea.php</file>
+            <file>file:/C:/wamp/www/ProyectoDCPS/templates/Modificar_idea_prueba.tpl</file>
         </group>
     </open-files>
 </project-private>

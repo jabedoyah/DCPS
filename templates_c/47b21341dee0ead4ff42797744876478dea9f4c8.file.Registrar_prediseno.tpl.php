@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.0.9, created on 2015-05-12 02:35:50
+<?php /* Smarty version Smarty-3.0.9, created on 2015-05-15 23:06:01
          compiled from "C:/wamp/www/ProyectoDCPS/templates\Registrar_prediseno.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:2955455514ae65d7677-14672396%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:1081055565fb9d02a66-94706762%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '47b21341dee0ead4ff42797744876478dea9f4c8' => 
     array (
       0 => 'C:/wamp/www/ProyectoDCPS/templates\\Registrar_prediseno.tpl',
-      1 => 1431118199,
+      1 => 1431649214,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '2955455514ae65d7677-14672396',
+  'nocache_hash' => '1081055565fb9d02a66-94706762',
   'function' => 
   array (
   ),
@@ -19,41 +19,7 @@ $_smarty_tpl->decodeProperties(array (
 )); /*/%%SmartyHeaderCode%%*/?>
 <form action="<?php echo $_smarty_tpl->getVariable('gvar')->value['l__global'];?>
 Registrar_prediseno.php?option=Agregar_prediseno" method="post">
-
-<header>
-    <title>Opciones del empleado</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <link rel="stylesheet" href="css/opciones.css">
-</header>
 <body>
-
-    <nav class="navbar navbar-default" role="navigation">
-        <div class="container">
-            <div id="sidebar-wrapper" class="sidebar-toggle">
-                <ul class="sidebar-nav">
-                    <li>
-                        <a href="opciones_especialista.php">Proponer Idea</a>
-                    </li>
-                    <li>
-                        <a href="#item2">Realizar Calificación</a>
-                    </li>
-                    <li>
-                        <a href="#item3">Modificar Idea</a>
-                    </li>
-                    <li>
-                        <a href="#item3">Definir dispositivo</a>
-                    </li>
-                    <li>
-                        <a href="#item3">Revisar diseño</a>
-                    </li>
-                    <li>
-                        <a href="Registrar_prediseno.php">Registrar prediseño</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
     <table>
         <thead>
             <tr>
