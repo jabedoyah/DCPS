@@ -149,10 +149,16 @@ class db {
                         $etapa = "Por revisar";
                         $necesidad = mysqli_real_escape_string($this->cn, $object->get('necesidad'));
                         $miembro = mysqli_real_escape_string($this->cn, $object->get('miembro'));
+                        if(isset($miembro)){
+                            $this->do_operation("INSERT INTO idea (nombre, descripcion, etapa, necesidad, miembro) 
+                                            VALUES ('$nombre', '$descripcion', '$etapa', '$necesidad', '$miembro');");    
+                            break;
+                        }else{
                         $cliente = mysqli_real_escape_string($this->cn, $object->get('cliente'));
                         $this->do_operation("INSERT INTO idea (nombre, descripcion, etapa, necesidad, miembro, cliente) 
                                             VALUES ('$nombre', '$descripcion', '$etapa', '$necesidad', '$miembro', '$cliente');");
                         break;
+                        }
                 }
                 break;
 
