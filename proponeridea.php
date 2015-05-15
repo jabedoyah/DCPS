@@ -6,13 +6,13 @@ class c_proponeridea extends super_controller {
 
     public function add() {
         $idea = new idea($this->post);
-        if (is_empty($idea->get('nombre')) || is_empty($idea->get('descripcion')) || ($idea->get('necesidad') == "Seleccione necesidad")) {
+        if (is_empty($idea->get('nombre')) || is_empty($idea->get('descripcion')) || ($idea->get('necesidad') == "Seleccione necesidad")){
             throw_exception("Campos incompletos");
         }
-        if ($this->session['tipo1'] == "miembro") {
-            $idea->set('miembro', $this->session['id']);
-        } else {
-            $idea->set('cliente', $this->session['id']);
+        if($this->session['tipo1']=="miembro"){
+            $idea->set('miembro',$this->session['id']);
+        }else{
+            $idea->set('cliente',$this->session['id']);
         }
         $this->orm->connect();
         $this->orm->insert_data("normal", $idea);
@@ -26,29 +26,26 @@ class c_proponeridea extends super_controller {
     }
 
     public function display() {
-        
-         $options['necesidad']['lvl2'] = "all";
-                        $this->orm->connect();
-                        $this->orm->read_data(array("necesidad"), $options);
-                        $necesidad = $this->orm->get_objects("necesidad");
-                        $this->orm->close();
-                        $this->engine->assign('necesidad', $necesidad);
         $this->engine->assign('title', 'proponer idea');
         $this->engine->display($this->temp_aux);
         $this->engine->display('proponeridea.tpl');
     }
 
     public function run() {
-
+        
         try {
-            if (!isset($this->session['id'])) {
-                header('Location: login.php');
-            } else {
-                if ($this->session['tipo1'] == "cliente" || $this->session['tipo1'] == "miembro") {
+            if(!isset($this->session['id'])){header('Location: login.php');}else{
+                if($this->session['tipo1']=="cliente" || $this->session['tipo1']=="miembro"){
                     if (isset($this->get->option)) {
                         $this->{$this->get->option}();
                     }
-                } else {
+                        $options['necesidad']['lvl2'] = "all";
+                        $this->orm->connect();
+                        $this->orm->read_data(array("necesidad"), $options);
+                        $necesidad = $this->orm->get_objects("necesidad");
+                        $this->orm->close();
+                        $this->engine->assign('necesidad', $necesidad);
+                }else{
                     header('Location: disenador.php');
                 }
             }
@@ -60,10 +57,10 @@ class c_proponeridea extends super_controller {
             $this->temp_aux = 'message.tpl';
         }
         $this->display();
+    
     }
 
 }
-
 $call = new c_proponeridea();
 $call->run();
 ?>
