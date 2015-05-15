@@ -1,4 +1,5 @@
 <?php
+
     class prediseno extends object_standard{
         //atribute variables
         protected $codigo;
