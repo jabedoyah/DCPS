@@ -5,6 +5,7 @@
         protected $codigo;
         protected $costo;
         protected $funcion;
+        protected $prediseno;
 
         //components
         var $components = array();
@@ -14,15 +15,25 @@
 
         //data about the attributes
         public function metadata() {
-            return array("codigo" => array(), "costo" => array(), "funcion" => array());
+            return array("codigo" => array(), "costo" => array(), "funcion" => array(), "prediseno" => array("foreign_name" => "p_d",
+                "foreign" => "prediseno", "foreign_attribute" => "codigo"));
         }
 
         public function primary_key() {
-            return array("costo");
+            return array("codigo");
         }
 
         public function relational_keys($class, $rel_name) {
             switch($class) {
+                case "prediseno":
+                    switch($rel_name)
+                    {
+                        case "p_d":
+                        return array("prediseno");
+                        break;
+                    }
+                    break;
+
                 default:
                 break;
             }
