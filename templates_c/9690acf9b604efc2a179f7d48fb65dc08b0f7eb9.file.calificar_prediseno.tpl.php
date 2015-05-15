@@ -1,24 +1,22 @@
-<?php /* Smarty version Smarty-3.0.9, created on 2015-05-13 18:07:33
+<?php /* Smarty version Smarty-3.0.9, created on 2015-05-14 20:48:15
          compiled from "C:/wamp/www/ProyectoDCPS/templates\calificar_prediseno.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:31406555376c5482666-44998814%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:298915554edef7805c6-01820947%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '9690acf9b604efc2a179f7d48fb65dc08b0f7eb9' => 
     array (
       0 => 'C:/wamp/www/ProyectoDCPS/templates\\calificar_prediseno.tpl',
-      1 => 1431533197,
+      1 => 1431629270,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '31406555376c5482666-44998814',
+  'nocache_hash' => '298915554edef7805c6-01820947',
   'function' => 
   array (
   ),
   'has_nocache_code' => false,
 )); /*/%%SmartyHeaderCode%%*/?>
-<!--Para usar la ñ-->
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <html>
     <script lang="javascript" src="js/jquery-2.1.3.min.js"></script>
     <body>    

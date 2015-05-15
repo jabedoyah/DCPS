@@ -1,28 +1,30 @@
-<?php /* Smarty version Smarty-3.0.9, created on 2015-05-08 07:49:08
+<?php /* Smarty version Smarty-3.0.9, created on 2015-05-15 06:48:21
          compiled from "C:/wamp/www/ProyectoDCPS/templates\Programar_reunion.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:17463554c4e5429ee75-33991782%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:2969655557a95ba07f6-39165164%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'c6673ab784c13116c5dd3a8aff2931715dbca5db' => 
     array (
       0 => 'C:/wamp/www/ProyectoDCPS/templates\\Programar_reunion.tpl',
-      1 => 1431064083,
+      1 => 1431665237,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '17463554c4e5429ee75-33991782',
+  'nocache_hash' => '2969655557a95ba07f6-39165164',
   'function' => 
   array (
   ),
   'has_nocache_code' => false,
 )); /*/%%SmartyHeaderCode%%*/?>
+<!--Para usar la ñ-->
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <form action="<?php echo $_smarty_tpl->getVariable('gvar')->value['l__global'];?>
 Programar_reunion.php?option=agregar_reunion" method="post">
     <table>
         <tbody>
             <tr>
-                <td>Ingrese el cÃ³digo de la reunion: </td>
+                <td>Ingrese el código de la reunion: </td>
                 <td> <input name="codigo" type="text"></td>
             </tr>
             <tr>

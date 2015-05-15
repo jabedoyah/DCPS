@@ -1,8 +1,10 @@
+<!--Para usar la ñ-->
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <form action="{$gvar.l__global}Programar_reunion.php?option=agregar_reunion" method="post">
     <table>
         <tbody>
             <tr>
-                <td>Ingrese el cÃ³digo de la reunion: </td>
+                <td>Ingrese el código de la reunion: </td>
                 <td> <input name="codigo" type="text"></td>
             </tr>
             <tr>
